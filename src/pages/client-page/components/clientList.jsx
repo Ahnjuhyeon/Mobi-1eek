@@ -6,7 +6,8 @@ import { MockUsersData } from "../../../__mock__/faker-data";
 import FilterPage from "../../../components/filter";
 
 const ClientList = () => {
-  const totalUsers = MockUsersData(100);
+  // const totalUsers = MockUsersData(200);
+  const [totalUsers, setTotalUsers] = useState(MockUsersData(200));
   console.log(`mock`, totalUsers);
   const columns = [
     "고유번호",
@@ -30,6 +31,7 @@ const ClientList = () => {
     <div>
       <FilterPage
         totalUsers={totalUsers}
+        setTotalUsers={setTotalUsers}
         usersPerPage={usersPerPage}
         setUsersPerPage={setUsersPerPage}
       />
